@@ -1,5 +1,5 @@
 import pytest
-from benchmark.fs_mark_obj import fsMarkObj
+from benchmark.common.fs_mark_obj import fsMarkObj
 from benchmark.cases import arguments
 from libs.log_obj import LogObj
 
