@@ -13,7 +13,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def init():
-    return render_template('fs_mark-2020-11-16-21-35-09.log')
+    return render_template('main.html')
+
+@app.route('/fs_mark')
+def report():
+    return render_template('main.html')
 
 if __name__ == '__main__':
     app.run(host=get_localhost_ip(), port=5000)
