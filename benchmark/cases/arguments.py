@@ -1,7 +1,7 @@
 import argparse
 
 cases_parser = argparse.ArgumentParser(add_help=False)
-cases_parser.add_argument("--cases", required=True, action="store", dest="cases", default=[], nargs='+', help="cases, default:None")
+cases_parser.add_argument("--cases", required=True, action="store", dest="cases", default=[], nargs='+', help="cases, default:[]")
 
 path_parser = argparse.ArgumentParser(add_help=False)
 path_parser.add_argument("--path", action="store", dest="path", default=None, help="path, default: None")

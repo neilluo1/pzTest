@@ -33,4 +33,4 @@ def fs_mark_report(report_html):
 
 
 if __name__ == '__main__':
-    app.run(host=get_localhost_ip(), port=5000)
+    app.run(host=get_localhost_ip(), port=5001)
