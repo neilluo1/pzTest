@@ -1,8 +1,10 @@
 import logging
 import logging.handlers
-import os
+import os, sys
 import threading
-from conf.global_settings import PYTHON_MAJOR_VERSION
+
+
+PYTHON_MAJOR_VERSION = sys.version_info.major
 
 # file log level
 FILE_LEVEL = logging.DEBUG
