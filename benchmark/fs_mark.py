@@ -11,6 +11,8 @@ class fsMarkObj(object):
     def entrys(self):
         entrys = ['-s 1048576 -n 1000', '-s 1048576 -n 1000 -S 0']
 
+        return entrys
+
     def run(self):
         for entry in self.entrys:
             cmd = '{bin} -d {path} {entry}'.format(bin=self.fs_mark, path=self.path, entry=entry)
