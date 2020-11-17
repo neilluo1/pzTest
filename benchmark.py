@@ -16,7 +16,7 @@ html_name = '{action}-{flag}.html'.format(action=args.action, flag=time_str)
 
 run_list = []
 run_list.extend(args.cases)
-case = 'benchmark/{action}.py'.format(action=args.action)
+case = 'benchmark/cases/{action}.py'.format(action=args.action)
 
 logger = LogObj(log_file).get_logger()
 run_tests = ' or '.join(run_list)
