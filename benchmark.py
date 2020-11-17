@@ -21,7 +21,7 @@ case = 'benchmark/cases/{action}.py'.format(action=args.action)
 logger = LogObj(log_file).get_logger()
 run_tests = ' or '.join(run_list)
 
-report_path = os.path.join(os.getcwd(), 'report')
+report_path = os.path.join(os.getcwd().split('storage')[0], 'storage/report/templates/')
 if not os.path.exists(report_path):
     os.makedirs(report_path)
 
@@ -29,9 +29,8 @@ html_path = os.path.join(report_path, html_name)
 
 cmd = ['-sv', '--disable-warnings', '--show-capture=no', '--tb=short', '-k {tests}'.format(tests=run_tests), '--count={iteration}'.format(iteration=1), '--repeat-scope=session', '--html={path}'.format(path=html_path), '--self-contained-html', case]
 
-
 logger.info('Run test command: {cmd}'.format(cmd=cmd))
 test_rtn = pytest.main(cmd)
 
-if args.action == 'ut' and test_rtn != 0:
+if test_rtn != 0:
     raise Exception('{action} test fail!'.format(action=args.action.upper()))

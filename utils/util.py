@@ -1,5 +1,6 @@
 import subprocess
 import traceback
+import socket
 from libs.log_obj import LogObj
 
 logger = LogObj().get_logger()
@@ -25,3 +26,14 @@ def run_cmd(cmd):
         rtn_dict['rc'] = -1
 
     return rtn_dict
+
+
+def get_localhost_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8', 80))
+        ip = s.getsockname()[0]
+    finally:
+        s.close()
+
+    return ip
