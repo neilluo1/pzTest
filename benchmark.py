@@ -12,7 +12,7 @@ start_time = datetime.datetime.now()
 time_str = start_time.strftime('%Y-%m-%d-%H-%M-%S')
 
 log_file = '{action}-{flag}.log'.format(action=args.action, flag=time_str)
-html_name = '{action}-{flag}.html'.format(action=args.action, flag=time_str)
+html_name = '{action}-report-{flag}.html'.format(action=args.action, flag=time_str)
 
 run_list = []
 run_list.extend(args.cases)
