@@ -27,7 +27,9 @@ if not os.path.exists(report_path):
 
 html_path = os.path.join(report_path, html_name)
 
-cmd = ['-sv', '--disable-warnings', '--show-capture=no', '--tb=short', '-k {tests}'.format(tests=run_tests), '--count={iteration}'.format(iteration=1), '--repeat-scope=session', '--html={path}'.format(path=html_path), '--self-contained-html', case]
+# cmd = ['-sv', '--disable-warnings', '--show-capture=no', '--tb=short', '-k {tests}'.format(tests=run_tests), '--count={iteration}'.format(iteration=1), '--repeat-scope=session', '--html={path}'.format(path=html_path), '--self-contained-html', case]
+
+cmd = ['-sv', '--disable-warnings', '--show-capture=no', '--tb=short', '-k {tests}'.format(tests=run_tests), '--count={iteration}'.format(iteration=1), '--repeat-scope=session', '--pytest_report', html_path, case]
 
 logger.info('Run test command: {cmd}'.format(cmd=cmd))
 test_rtn = pytest.main(cmd)
