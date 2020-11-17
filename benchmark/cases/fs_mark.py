@@ -14,9 +14,9 @@ def fs_mark_obj():
     return fs_mark_obj
 
 
-def test_100File_1M(fs_mark_obj):
+def test_100file_1M(fs_mark_obj):
     fs_mark_obj.run('-s 1048576 -n 100')
 
 
-def test_100File_1M_NoSync(fs_mark_obj):
+def test_100file_1M_nosync(fs_mark_obj):
     fs_mark_obj.run('-s 1048576 -n 100 -S 0')
