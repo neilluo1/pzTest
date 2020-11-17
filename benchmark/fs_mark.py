@@ -9,7 +9,7 @@ class fsMarkObj(object):
 
     @property
     def entrys(self):
-        entrys = ['-s 1048576 -n 1000', '-s 1048576 -n 1000 -S 0']
+        entrys = ['-s 1048576 -n 1000']
 
         return entrys
 
