@@ -3,7 +3,7 @@ from libs.log_obj import LogObj
 import datetime
 import os
 import sys
-from benchmark import arguments
+from benchmark.cases import arguments
 
 sys.setrecursionlimit(100000)
 args = arguments.parse_arg()

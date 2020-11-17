@@ -9,10 +9,10 @@ path_parser.add_argument("--path", action="store", dest="path", default=None, he
 
 def parse_arg():
     """Init all the command line arguments."""
-    parser = argparse.ArgumentParser(description='pztest')
+    parser = argparse.ArgumentParser(description='benchmark')
     subparsers = parser.add_subparsers()
 
-    sub_parser = subparsers.add_parser('fs_mark', parents=[cases_parser, path_parser], help='ut args.')
+    sub_parser = subparsers.add_parser('fs_mark', parents=[cases_parser, path_parser], help='fs_mark args.')
     sub_parser.set_defaults(action='fs_mark')
 
     args = parser.parse_args()
