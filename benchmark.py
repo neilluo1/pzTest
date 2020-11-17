@@ -34,4 +34,4 @@ logger.info('Run test command: {cmd}'.format(cmd=cmd))
 test_rtn = pytest.main(cmd)
 
 if args.action == 'ut' and test_rtn != 0:
-    raise Exception('{action} {module} test fail!'.format(action=args.action.upper(), module=args.module))
+    raise Exception('{action} test fail!'.format(action=args.action.upper()))
