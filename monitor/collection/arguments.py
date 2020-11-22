@@ -13,8 +13,8 @@ def ssh_auth_parser():
     """
     ssh_auth_parser = argparse.ArgumentParser(add_help=False)
     ssh_auth_group = ssh_auth_parser.add_argument_group('SSH auth info args')
-    ssh_auth_group.add_argument("--sys_user", action="store", dest="sys_user", default="root", help="default:root")
-    ssh_auth_group.add_argument("--sys_pwd", action="store", dest="sys_pwd", default="password",
+    ssh_auth_group.add_argument("--username", action="store", dest="username", default="root", help="default:root")
+    ssh_auth_group.add_argument("--password", action="store", dest="password", default="password",
                                 help="default:password")
     ssh_auth_group.add_argument("--key_file", action="store", dest="key_file", default=None, help="pem key file path")
 
