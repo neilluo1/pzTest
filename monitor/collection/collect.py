@@ -1,6 +1,6 @@
 import sys, os
 
-work_dir = os.path.join(os.getcwd().split('pzcore')[0], 'pzcore')
+work_dir = os.path.join(os.getcwd().split('storage')[0], 'storage')
 sys.path.append(work_dir)
 
 from monitor.collection.volume import CollectVolumeData
