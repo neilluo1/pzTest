@@ -15,6 +15,9 @@ def parse_arg():
     sub_parser = subparsers.add_parser('fs_mark', parents=[cases_parser, path_parser], help='fs_mark args.')
     sub_parser.set_defaults(action='fs_mark')
 
+    sub_parser = subparsers.add_parser('iozone', parents=[cases_parser, path_parser], help='iozone args.')
+    sub_parser.set_defaults(action='iozone')
+
     args = parser.parse_args()
 
     return args
