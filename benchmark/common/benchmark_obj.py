@@ -20,7 +20,7 @@ class benchmarkObj(object):
             raise Exception('Run fs_mark entry {entry} failed!'.format(entry=entry))
 
     def iozone_run(self, entry):
-        file_name_path = os.path.join(self.path, 'iozone')
+        file_name_path = os.path.join(self.path, 'iozone.tmp')
         cmd = '{bin} -f {path} -e -o {entry}'.format(bin=self.iozone, path=file_name_path, entry=entry)
         rtn_dict = run_cmd(cmd)
         if rtn_dict['rc'] == 0 and rtn_dict['stderr'] is None:

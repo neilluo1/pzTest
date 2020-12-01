@@ -16,6 +16,20 @@ def benchmark_obj():
 
 def test_case1(benchmark_obj):
     """
-    Block size: 4KB, Min file size: 512MB, Max file size: 4GB
+    Block size: 4KB, File size: 512MB
     """
-    benchmark_obj.iozone_run('-r 4k -n 512m -g 4g -i 0 -i 1')
+    benchmark_obj.iozone_run('-r 4k -s 512m -i 0 -i 1')
+
+
+def test_case2(benchmark_obj):
+    """
+    Block size: 128KB, File size: 512MB
+    """
+    benchmark_obj.iozone_run('-r 128k -s 512m -i 0 -i 1')
+
+
+def test_case3(benchmark_obj):
+    """
+    Block size: 512KB, File size: 512MB
+    """
+    benchmark_obj.iozone_run('-r 512k -s 512m -i 0 -i 1')
