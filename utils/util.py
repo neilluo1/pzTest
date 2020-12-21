@@ -3,6 +3,7 @@ import traceback
 import socket
 import time
 import datetime
+import re
 from progressbar import ProgressBar, Percentage, Bar, RotatingMarker, ETA
 from libs.log_obj import LogObj
 
@@ -76,6 +77,16 @@ def datetime_to_str(st, fmt="%a %b %d %H:%M:%S PST %Y"):
     :return:
     """
     return st.strftime(fmt)
+
+
+def datetime_parser(dct):
+    for k, v in dct.items():
+        if isinstance(v, str) and re.search("PST", v):
+            try:
+                dct[k] = str_to_datetime(v)
+            except Exception:
+                pass
+    return dct
 
 
 def sleep(sleep_time):

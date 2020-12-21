@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <h1 align="center">Vbos Volume Monitor</h1>
+    <h1 align="center">Storage Monitor</h1>
     <script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
 </head>
@@ -16,28 +16,8 @@
 </div><br>
 
 <body>
-    <table border="1" id="volume_info_table">
-        <caption>Volume Info</caption>
-        <tr>
-            <th>Volume ID</th>
-            <th>PV Name</th>
-            <th>PVC Name</th>
-            <th>Node</th>
-            <th>Mounted By</th>
-        </tr>
-        <tr>
-            <td>{{ volume_id }}</td>
-            <td>{{ vbos_pv_info['name'] }}</td>
-            <td>{{ vbos_pv_info['claim_ref']['name'] }}</td>
-            <td id="node"></td>
-            <td id="mounted_by"></td>
-        </tr>
-    </table><br>
-
-    <h2>Volume Bench</h2>
+    <h2>Storage Bench</h2>
     <div id="main1" style="height:500px;border:1px solid #ccc;padding:10px;"></div><br>
-    <h2>Volume channel stat detail</h2>
-    <pre id="div1"></pre>
     <script type="text/javascript">
     option1 = {
         title: {
@@ -46,7 +26,7 @@
         tooltip : {
             trigger: 'axis'
         },
-        color: ['Red', 'Blue', 'Green', 'Yellow', 'SlateGray', 'Sienna', 'Purple', 'Salmon', 'Black', 'Turquoise'],
+        color: ['Red', 'Blue'],
         legend: {
             data:['WriteIOPS', 'ReadIOPS'],
             selected: {}
@@ -136,9 +116,6 @@
         });
 
         if (dataLength == 0){clearInterval(timeTicket);}
-
-        var channel_stat_detail = document.getElementById('div1');
-        channel_stat_detail.innerHTML=data.channel_stat_detail;
     }
 
     myChart1.showLoading();
